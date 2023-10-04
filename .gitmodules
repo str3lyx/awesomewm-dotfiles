@@ -1,4 +1,0 @@
-[submodule "awesome"]
-	path = awesome
-	url = git@github.com:str3lyx/awesomewm-dotfiles.git
-	branch = awesome
