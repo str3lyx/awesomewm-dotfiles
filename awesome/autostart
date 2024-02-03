@@ -1,5 +1,15 @@
 #!/bin/sh
 
-dex -a &
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-playerctld daemon &
+run() {
+  if ! pgrep -f "$1" ;
+  then
+    "$@"&
+  fi
+}
+
+if (xrdb -query | grep -q "^awesome\\.started:\\s*true$"); then exit; fi;
+xrdb -merge <<< "awesome.started:true";
+dex --environment Awesome --autostart
+
+run "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+run "playerctld daemon"

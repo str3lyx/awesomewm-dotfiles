@@ -24,3 +24,6 @@ awful.spawn.easy_async_with_shell("sh " .. gfs.get_configuration_dir() .. "autos
 
 -- Menubar configuration
 menubar.utils.terminal = constant.terminal
+
+-- Popup
+require("ui.popups.tasklist_popup")

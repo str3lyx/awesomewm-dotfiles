@@ -7,16 +7,6 @@ local alt = "Mod1"
 
 awful.keyboard.append_global_keybindings {
    awful.key(
-      { alt }, "Tab",
-      function() awful.client.focus.byidx(1) end,
-      { description = "focus next by index", group = "client" }
-   ),
-   awful.key(
-      { alt, shift }, "Tab",
-      function() awful.client.focus.byidx(-1) end,
-      { description = "focus previous by index", group = "client" }
-   ),
-   awful.key(
       { super }, "Tab",
       function()
          awful.client.focus.history.previous()

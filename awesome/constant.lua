@@ -1,4 +1,4 @@
 return {
-   terminal = "alacritty",
-   editor = os.getenv("EDITOR") or "nvim"
+   terminal = "wezterm",
+   editor = os.getenv("EDITOR") or "nano"
 }
